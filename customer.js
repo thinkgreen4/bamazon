@@ -15,7 +15,7 @@ var connection = mysql.createConnection({
     user: "root",
 
     // Your password
-    password: "",
+    password: "root",
     database: "bamazon"
 });
 
@@ -31,7 +31,7 @@ function start () {
 
     connection.query("SELECT * FROM products", function(err, data){
         for(var i = 0; i < data.length; i++){
-            console.log(`id: ${data[i].item_id} | name: ${data[i].product_name}`);
+            console.log(`id: ${data[i].item_id} | name: ${data[i].product_name} |`);
             //'id: ' + data[i].item_id + ''
         }
         inquirer
